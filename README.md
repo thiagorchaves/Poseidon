@@ -5,7 +5,8 @@ Api implementada com Node.js+MySQL, rodando em docker.
 - Docker, para saber como instalar o docker acesse [Docker](https://docs.docker.com/install/)
 - Docker Compose, caso tenha linux acesse [Docker Compose](https://docs.docker.com/compose/install/) para efetuar a instalação
 ### Como rodar a aplicação:
- - Foi executado o build da imagem do node.js já copiando os arquivos para dentro da imagem para que a mesma funcione. o seguinte comando foi executado:
+ - Foi executado o build da imagem do node.js já copiando os arquivos para dentro da imagem para que a mesma funcione. 
+ O seguinte comando foi executado:
  ```sh
 $ docker build -f <local onde estão os arquivos> -t <nome da imagem> .
 ```

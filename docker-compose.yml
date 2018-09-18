@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+
+    nginx:
+        build:
+            dockerfile: ./nginx.dockerfile
+            context: .
+        image: thiagorc/nginx
+        container_name: nginx
+        ports:
+            - "80:80"
+        networks:
+            - network-teste
+        depends_on:
+            - "node"
+
+    mysql:
+        build:
+            dockerfile: ./mysql.dockerfile
+            context: .
+        image: thiagorc/mysql
+        container_name: mysql
+        networks:
+            - network-teste
+
+    node:
+        image: thiagorc/node
+        container_name: node
+        ports:
+            - "8080"
+        networks: 
+            - network-teste
+        depends_on:
+            - "mysql"
+
+
+networks: 
+    network-teste:
+        driver: bridge
